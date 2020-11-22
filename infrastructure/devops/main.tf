@@ -1,5 +1,5 @@
 locals {
-  project = "tfaz"
+  project = random_pet.fido.id
 
   tags = {
     Environment = "Test"

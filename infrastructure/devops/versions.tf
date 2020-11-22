@@ -14,6 +14,18 @@ terraform {
       source  = "hashicorp/random"
       version = "~> 3.0.0"
     }
+    azuredevops = {
+      source  = "terraform-providers/azuredevops"
+      version = "~> 0.0.1"
+    }
+  }
+
+  backend "remote" {
+    organization = "jamesrcounts"
+
+    workspaces {
+      name = "conftest-devops"
+    }
   }
 }
 
